@@ -1,0 +1,10 @@
+name: dilatedblocknetmultigraph
+dataset: timeseriesdataset
+hidden_dim: 64
+num_blocks: 4
+lcorr_gru_dim: 64
+lcorr_qk_dim: 32
+lcorr_softmax_dim: 2
+residual_conns: True
+no_dilation: False
+

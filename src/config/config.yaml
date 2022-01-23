@@ -1,0 +1,52 @@
+defaults:
+  - _self_
+  - optimizer: adam
+  - model: baselineblocknetmultigraph
+  - data_set: GE_BM
+  - override hydra/sweeper: optuna
+
+data:
+  window_size: 20
+  horizon: 1
+  shuffle_loader: True
+  correlation_threshold: 0
+  dropout: 0.3
+  prediction_offset: 1 #set = 1 for tomorrow, = 20 for 20'th day
+  classification: false
+  transforms:
+    frac_diff: 1
+    de_trend: 0
+    standardize: 1
+    normalize: 0
+    log_trans: 0
+
+training:
+  batch_size: 200
+  epochs: 250
+  save_model_after_epoch: 0
+  scheduler_gamma: 1 #set < 1 for exp scheduler, 2 for multistep and 3 for cyclical
+  gradient_clipping: 3
+  profiling: false
+  output_model: true
+  prune_after_epochs: 75
+
+# Optuna
+hydra:
+  sweeper:
+    sampler:
+      _target_: optuna.samplers.TPESampler
+      seed: 123
+      consider_prior: true
+      prior_weight: 1.0
+      consider_magic_clip: true
+      consider_endpoints: false
+      n_startup_trials: 10
+      n_ei_candidates: 24
+      multivariate: false
+      warn_independent_sampling: true
+    _target_: hydra_plugins.hydra_optuna_sweeper.optuna_sweeper.OptunaSweeper
+    direction: minimize
+    storage: null
+    study_name: multi_2
+    n_trials: 60
+    n_jobs: 1

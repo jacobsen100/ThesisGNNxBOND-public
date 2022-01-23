@@ -1,0 +1,9 @@
+name: flexhetnet
+dataset: timeseriesdataset
+hidden_dim: 64
+num_blocks: 4
+lcorr_gru_dim: 64
+lcorr_qk_dim: 32
+bipartite: false
+cheb_conv_k: 2 #set to 0 for just normal graph conv
+

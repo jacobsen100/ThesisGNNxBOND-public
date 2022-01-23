@@ -1,0 +1,8 @@
+name: spatemnet
+dataset: graphdataset
+intermediate_dim: 32
+num_layers: 5
+num_hops: 2
+dilation_factor: 2
+temporal_first: True
+

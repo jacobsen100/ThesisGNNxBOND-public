@@ -1,0 +1,3 @@
+name: stupidshitmodel
+dataset: timeseriesdataset
+backcast: False

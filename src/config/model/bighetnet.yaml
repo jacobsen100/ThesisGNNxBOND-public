@@ -1,0 +1,10 @@
+name: bighetnet
+dataset: timeseriesdataset
+hidden_dim: 64
+num_blocks: 4
+lcorr_gru_dim: 64
+lcorr_qk_dim: 32
+attention_output_dim: 256
+cheb_conv_k: 2
+batch_norm: false
+

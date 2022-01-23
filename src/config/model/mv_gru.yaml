@@ -1,0 +1,6 @@
+name: mv_gru
+dataset: timeseriesdataset
+hidden_layer_size: 256
+number_of_layers: 2
+bidirectional: True
+backcast: False

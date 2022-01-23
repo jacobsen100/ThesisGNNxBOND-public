@@ -1,0 +1,5 @@
+name: stemgnn
+dataset: graphdataset
+backcast: True
+stack_count: 2
+multi_layer: 2

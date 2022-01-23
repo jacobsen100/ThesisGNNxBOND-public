@@ -1,0 +1,5 @@
+name: adam
+lr: 0.00001
+betas_low: 0.9
+betas_hi: 0.999
+weight_decay: 0
